@@ -4,3 +4,4 @@ modules:
 - puppetlabs/puppet_agent
 - puppetlabs/puppetdb
 - puppetlabs/postgresql
+- puppet/r10k
