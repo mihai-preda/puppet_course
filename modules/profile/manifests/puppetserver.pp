@@ -14,13 +14,4 @@ class profile::puppetserver {
     enable  => true,
     require => [Package['puppetserver'], File['sysconfig-puppetserver']],
   }
-  # Configure the Puppet master to use puppetdb
-  # comment the class below until the two servers are up
-  # class { 'puppetdb::master::config':
-  #   enable_reports          => true,
-  #   manage_report_processor => true,
-  #   puppetdb_server         => 'db.preda.ca',
-  #   puppetdb_port           => 8081,
-  #   manage_routes           => true,
-  # }
 }

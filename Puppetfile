@@ -4,6 +4,7 @@
 # The following directive installs modules to the managed moduledir.
 moduledir '.modules'
 
+mod 'puppet-r10k', '13.0.0'
 mod 'puppetlabs/postgresql', '10.3.0'
 mod 'puppetlabs/puppet_agent', '4.21.0'
 mod 'puppetlabs/facts', '1.6.0'
