@@ -1,5 +1,7 @@
 # base profile
 class profile::base {
+  exec { '/bin/dnf -y':
+  }
   package { 'vim':
     ensure => 'present',
   }
