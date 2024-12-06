@@ -1,6 +1,7 @@
 # base profile
 class profile::base {
-  exec { '/bin/dnf -y':
+  exec { 'dnf update':
+    command => '/bin/dnf update -y',
   }
   package { 'vim':
     ensure => 'present',

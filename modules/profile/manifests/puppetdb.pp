@@ -6,5 +6,4 @@ class profile::puppetdb {
     database_host           => 'db.preda.ca',
     database_listen_address => '0.0.0.0',
   }
-  #exec { '/opt/puppetlabs/bi/puppetdb ssl-setup -f': }
 }
