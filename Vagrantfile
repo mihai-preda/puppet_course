@@ -30,5 +30,4 @@ Vagrant.configure("2") do |config|
     db.vm.hostname = "db.preda.ca"
     db.vm.synced_folder ".", "/puppet_course"
   end
-
 end
