@@ -14,4 +14,8 @@ class profile::puppetserver {
     enable  => true,
     require => [Package['puppetserver'], File['sysconfig-puppetserver']],
   }
+  package { 'puppetdb-termini':
+    ensure   => 'installed',
+    provider => 'dnf',
+  }
 }
