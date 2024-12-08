@@ -1,5 +1,8 @@
 # base profile
 class profile::base {
+  exec { 'set local':
+    command => '/bin/localectl set-locale LANG=en_GB',
+  }
   exec { 'dnf update':
     command => '/bin/dnf update -y',
   }
