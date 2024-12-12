@@ -16,14 +16,6 @@ class profile::certificates {
     path   => '/etc/pki/tls/certs/chain.pem',
     source => '/puppet_course/files/chain.pem',
   }
-  file { 'fullchain':
-    ensure => file,
-    owner  => root,
-    group  => root,
-    mode   => '0644',
-    path   => '/etc/pki/tls/certs/fullchain.pem',
-    source => '/puppet_course/files/fullchain.pem',
-  }
   file { 'privatekey':
     ensure => file,
     owner  => root,
