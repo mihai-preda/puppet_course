@@ -1,5 +1,4 @@
-# Class: puppet server
-#
+# puppt server class
 class role::puppetserver {
   include profile::base
   include profile::git

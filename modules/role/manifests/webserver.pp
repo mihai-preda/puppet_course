@@ -1,6 +1,5 @@
-# Class: role::webserver
+# web server role
 class role::webserver {
-  # resources
   include profile::base
   include profile::puppet_agent
   include profile::certificates
