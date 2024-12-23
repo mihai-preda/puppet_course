@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :web do |web|
     web.vm.network :private_network, ip: "172.16.10.11", netmask: "255.255.255.0"
-    web.vm.network "forwarded_port", guest: 443, host: 8443
+    #web.vm.network "forwarded_port", guest: 443, host: 8443
     web.vm.provision "shell", inline: $rhel
     web.vm.hostname = "web.preda.ca"
     web.vm.synced_folder ".", "/puppet_course"
@@ -36,5 +36,19 @@ Vagrant.configure("2") do |config|
     db.vm.provision "shell", inline: $rhel
     db.vm.hostname = "db.preda.ca"
     db.vm.synced_folder ".", "/puppet_course"
+  end
+
+  config.vm.define :zbs do |zbs|
+    zbs.vm.network :private_network, ip: "172.16.10.18", netmask: "255.255.255.0"
+    zbs.vm.provision "shell", inline: $rhel
+    zbs.vm.hostname = "monitor.preda.ca"
+    zbs.vm.synced_folder ".", "/puppet_course"
+  end
+
+  config.vm.define :zdb do |zdb|
+    zdb.vm.network :private_network, ip: "172.16.10.19", netmask: "255.255.255.0"
+    zdb.vm.provision "shell", inline: $rhel
+    zdb.vm.hostname = "zdb.preda.ca"
+    zdb.vm.synced_folder ".", "/puppet_course"
   end
 end
