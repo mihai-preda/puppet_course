@@ -1,5 +1,5 @@
 # zabbix db
-class role::zdb {
+class role::zabbixdb {
   include profile::base
   include profile::puppet_agent
 }
