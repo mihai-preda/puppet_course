@@ -5,8 +5,10 @@ groups:
   - name: linux
     targets:
       - db.preda.ca
+      - monitor.preda.ca
       - puppet.preda.ca
       - web.preda.ca
+      - zdb.preda.ca
     config:
       transport: ssh
       ssh:
