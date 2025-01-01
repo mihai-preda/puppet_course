@@ -3,7 +3,7 @@
 
 BOX = "bento/oraclelinux-9"
 $rhel = <<EOF
-route add default gw 172.16.10.254
+route add default gw 10.24.0.1
 eval `route -n | awk '{ if ($8 ==\"eth0\" && $2 != \"0.0.0.0\") print \"route del default gw \" $2; }'`
 EOF
 
@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   config.hostmanager.manage_guest = true
 
   config.vm.define :puppet do |puppet|
-    puppet.vm.network :private_network, ip: "172.16.10.10", netmask: "255.255.255.0"
+    puppet.vm.network :public_network
     puppet.vm.provision "shell", inline: $rhel
     puppet.vm.hostname = "puppet.preda.ca"  
     puppet.vm.synced_folder ".", "/puppet_course"
@@ -23,30 +23,28 @@ Vagrant.configure("2") do |config|
  end
 
   config.vm.define :web do |web|
-    web.vm.network :private_network, ip: "172.16.10.11", netmask: "255.255.255.0"
-    #web.vm.network "forwarded_port", guest: 443, host: 8443
+    web.vm.network :public_network
     web.vm.provision "shell", inline: $rhel
     web.vm.hostname = "web.preda.ca"
     web.vm.synced_folder ".", "/puppet_course"
   end
 
   config.vm.define :db do |db|
-    db.vm.network :private_network, ip: "172.16.10.12", netmask: "255.255.255.0"
-    #db.vm.network "forwarded_port", guest: 8081, host: 8081 use puppet firewall module
+    db.vm.network :public_network
     db.vm.provision "shell", inline: $rhel
     db.vm.hostname = "db.preda.ca"
     db.vm.synced_folder ".", "/puppet_course"
   end
 
   config.vm.define :zbs do |zbs|
-    zbs.vm.network :private_network, ip: "172.16.10.18", netmask: "255.255.255.0"
+    zbs.vm.network :public_network
     zbs.vm.provision "shell", inline: $rhel
     zbs.vm.hostname = "monitor.preda.ca"
     zbs.vm.synced_folder ".", "/puppet_course"
   end
 
   config.vm.define :zdb do |zdb|
-    zdb.vm.network :private_network, ip: "172.16.10.19", netmask: "255.255.255.0"
+    zdb.vm.network :public_network
     zdb.vm.provision "shell", inline: $rhel
     zdb.vm.hostname = "zdb.preda.ca"
     zdb.vm.synced_folder ".", "/puppet_course"
