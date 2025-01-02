@@ -5,4 +5,3 @@ modules:
 - puppetlabs/puppetdb
 - puppetlabs/postgresql
 - puppet/r10k
-- puppetlabs/package
