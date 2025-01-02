@@ -11,4 +11,4 @@ sudo dnf install puppet8-release-el-9.noarch.rpm && sudo dnf install puppet-tool
 sudo dnf update
 
 # Install Puppetserver and other puppet tools
-sudo yum install -y puppet-agent
+sudo dnf install -y puppet-agent
