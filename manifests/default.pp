@@ -1,0 +1,1 @@
+# puppet provisioning with vagrant
