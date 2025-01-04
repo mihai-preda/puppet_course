@@ -3,6 +3,9 @@ class profile::base {
   exec { 'dnf update':
     command => '/bin/dnf update -y',
   }
+  exec { 'timedatectl':
+    command => '/bin/timedatectl set-timezone America/Vancouver',
+  }
   package { 'vim':
     ensure => 'present',
   }
