@@ -33,7 +33,6 @@ Vagrant.configure("2") do |config|
   config.vm.define :db do |db|
     db.vm.network "public_network"
     db.vm.provision "shell", run: "always", inline: $rhel
-    db.vm.network "forwarded_port", guest: 8081, host: 8081
     db.vm.hostname = "db.preda.ca"
     db.vm.synced_folder ".", "/puppet_course"
   end
