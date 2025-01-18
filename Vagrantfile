@@ -3,7 +3,7 @@
 
 BOX = "bento/oraclelinux-9"
 $rhel = <<EOF
-route add default gw 172.16.10.1
+route add default gw 172.16.10.254
 eval `route -n | awk '{ if ($8 ==\"eth0\" && $2 != \"0.0.0.0\") print \"route del default gw \" $2; }'`
 EOF
 
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     puppet.vm.network :private_network, :ip => '172.16.10.10' 
     puppet.vm.provision "shell", run: "always", inline: $rhel
     puppet.vm.hostname = "puppet.preda.ca"
-    puppet.vm.provision :hostmanager
+    puppet.hostmanager.aliases = %w(puppet)
     puppet.vm.synced_folder ".", "/puppet_course"
     puppet.vm.provider :vmware_desktop do |vb|
       vb.memory = "3072"
