@@ -4,7 +4,6 @@
 BOX = "bento/oraclelinux-9"
 $rhel = <<EOF
 route add default gw 172.16.10.254
-eval `route -n | awk '{ if ($8 ==\"eth0\" && $2 != \"0.0.0.0\") print \"route del default gw \" $2; }'`
 EOF
 
 Vagrant.configure("2") do |config|
