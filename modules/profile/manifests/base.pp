@@ -3,11 +3,6 @@ class profile::base {
   exec { 'dnf update':
     command => '/bin/dnf update -y',
   }
-  file { 'resolve.conf':
-    ensure => 'file',
-    source => '/puppet_course/files/resolve.conf',
-    path   => '/etc/resolv.conf',
-  }
   exec { 'timedatectl':
     command => '/bin/timedatectl set-timezone America/Vancouver',
   }

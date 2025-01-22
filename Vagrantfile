@@ -50,6 +50,12 @@ Vagrant.configure("2") do |config|
     zdb.vm.hostname = "zdb.preda.ca"
     zdb.vm.synced_folder ".", "/puppet_course"
   end
-  # config.vm.define :tstnode do |tstnode|
+  #  config.vm.define :wss22 do |wss22|
+  #    wss22.vm.network :private_network, :ip => '172.16.10.15'
+  #    wss22.vm.hostname = "wss22.preda.ca"
+  #    wss22.vm.synced_folder ".", "/puppet_course"
+  #    wss22.vm.provider :vmware_desktop do |vb|
+  #     #vb.gui = true
+  #  end
   # end
 end
