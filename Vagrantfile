@@ -44,14 +44,7 @@ Vagrant.configure("2") do |config|
     zbs.vm.synced_folder ".", "/puppet_course"
   end
 
-  config.vm.define :zdb do |zdb|
-    zdb.vm.network :private_network, :ip => '172.16.10.14'
-    zdb.vm.network "forwarded_port", guest: 5432, host: 5432
-    zdb.vm.provision "shell", run: "always", inline: $rhel
-    zdb.vm.hostname = "zdb.preda.ca"
-    zdb.vm.synced_folder ".", "/puppet_course"
-  end
-  #  config.vm.define :wss22 do |wss22|
+  # #  config.vm.define :wss22 do |wss22|
   #    wss22.vm.network :private_network, :ip => '172.16.10.15'
   #    wss22.vm.hostname = "wss22.preda.ca"
   #    wss22.vm.synced_folder ".", "/puppet_course"
