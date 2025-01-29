@@ -6,6 +6,11 @@ class profile::base {
   exec { 'timedatectl':
     command => '/bin/timedatectl set-timezone America/Vancouver',
   }
+  file { 'resolve dot conf':
+    ensure => 'file',
+    source => '/puppet_course/files/resolv.conf',
+    path   => '/etc/resolv.conf',
+  }
   package { 'vim':
     ensure => 'present',
   }
