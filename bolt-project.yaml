@@ -6,3 +6,4 @@ modules:
 - puppetlabs/postgresql
 - puppet/r10k
 - puppetlabs/inifile
+- puppetlabs/vcsrepo
