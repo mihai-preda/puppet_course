@@ -5,7 +5,7 @@ Run the following commands to get bolt going:
 cat bolt-ssh-key.pub >> ~/.ssh/authorized_keys
 echo "export BOLT_PROJECT='/puppet_course'" >> /root/.bashrc
 exec bash
-# **Important Note: projects created with one version of bolt will not run properly if executed with another version of bolt**
+# **Important Note: when starting from scratch with new .modules directory, use bolt to add a basic module like vcsrepo or stlib**
 # set puppet server on nodes
 puppet config set server puppet.preda.ca
 # after successful deployment of puppet server, use control-repo with agents instead of bolt
