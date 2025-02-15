@@ -8,3 +8,4 @@ modules:
 - puppetlabs/inifile
 - puppetlabs/vcsrepo
 - puppet/swap_file
+- puppetlabs/chocolatey
