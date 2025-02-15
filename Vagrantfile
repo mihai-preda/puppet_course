@@ -35,9 +35,6 @@ Vagrant.configure("2") do |config|
     db.vm.network :private_network, ip: "172.16.1.12"
     db.vm.provision "shell", run: "always", inline: $rhel
     db.vm.synced_folder ".", "/puppet_course"
-    # db.vm.provider :vmware_desktop do |vb|
-    #   vb.memory = "3072"
-    # end
   end
 
   config.vm.define :zbs do |zbs|
