@@ -8,27 +8,17 @@ groups:
       - monitor.preda.ca
       - puppet.preda.ca
       - web.preda.ca
-      #- zdb.preda.ca
     config:
       transport: ssh
       ssh:
         user: vagrant
         run-as: root
         private-key: bolt-ssh-key
-
-  # - name: windows
-  #   targets:
-  #     - name: win1
-  #       uri: target3.example.com
-  #     - name: win2
-  #       uri: target4.example.com
-  #   config:
-  #     transport: winrm
 config:
   ssh:
     host-key-check: false
     native-ssh: true
-#   winrm:
-#     user: Administrator
-#     password: Bolt!
-#     ssl: false
+# Bolt fails to execute on Windows targets because it defaults to SSH as the
+# transport method.
+# use the following command to execute on Windows:
+# bolt apply manifests/site.pp -t winrm://win-sjdjgqkmqgl.preda.ca --user administrator --password-prompt  
