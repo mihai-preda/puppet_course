@@ -11,15 +11,16 @@ groups:
     config:
       transport: ssh
       ssh:
+        host-key-check: false
+        native-ssh: true
         user: vagrant
         run-as: root
         private-key: bolt-ssh-key
-config:
-  ssh:
-    host-key-check: false
-    native-ssh: true
-# Bolt fails to execute on Windows targets because it defaults to SSH as the
-# transport method.
-# use the following command to execute on Windows:
-# bolt apply manifests/site.pp -t winrm://win-sjdjgqkmqgl.preda.ca --no-ssl --user administrator --password-prompt
-# It will install puppet agent. Sign its certificate on the Puppet Server to start using it  
+  - name: Windows
+    targets:
+    - win-tan06jp8l69.preda.ca
+    config:
+      transport: winrm
+      winrm:
+        user: Administrator
+        password: QueKnot0-98      
