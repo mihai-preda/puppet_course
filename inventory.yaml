@@ -8,6 +8,7 @@ groups:
       - monitor.preda.ca
       - puppet.preda.ca
       - web.preda.ca
+      - phys-srv-01.preda.ca
     config:
       transport: ssh
       ssh:
