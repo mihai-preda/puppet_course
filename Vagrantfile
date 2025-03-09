@@ -3,10 +3,9 @@
 
 BOX = "bento/oraclelinux-9"
 $rhel = <<EOF
-eval `route -n | awk '{ if ($8 ==\"eth0\" && $2 != \"0.0.0.0\") print \"route del default gw \" $2; }'`
+route add default gw 10.21.2.254
+nmcli conn modify "System eth1" ipv4.dns  "10.21.2.254"
 EOF
-# route add default gw 10.21.2.254
-# nmcli conn modify "System eth1" ipv4.dns  "10.21.2.254"
 
 Vagrant.configure("2") do |config|
   config.vm.box = BOX
