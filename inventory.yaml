@@ -8,7 +8,7 @@ groups:
       - monitor.preda.ca
       - puppet.preda.ca
       - web.preda.ca
-      - phys-srv-01.preda.ca
+      - mini.preda.ca  
     config:
       transport: ssh
       ssh:
@@ -19,9 +19,9 @@ groups:
         private-key: bolt-ssh-key
   - name: Windows
     targets:
-    - win-tan06jp8l69.preda.ca
+    - red.preda.ca
     config:
       transport: winrm
       winrm:
-        user: Administrator
-        password: QueKnot0-98      
+        user: vagrant
+        password: vagrant

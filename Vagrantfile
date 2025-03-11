@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 BOX = "bento/oraclelinux-9"
+WIN22 = "winserver22"
 $rhel = <<EOF
 route add default gw 10.21.2.254
 nmcli conn modify "System eth1" ipv4.dns  "10.21.2.254"
@@ -43,4 +44,11 @@ Vagrant.configure("2") do |config|
     zbs.vm.provision "shell", run: "always", inline: $rhel
     zbs.vm.synced_folder ".", "/puppet_course"
   end
+
+  # config.vm.define :red do |red|
+  #   red.vm.box = "winserver22"
+  #   red.vm.hostname = "red" #windows cannot handle FQDN. keep host name only
+  #   red.vm.network :public_network, ip: "10.21.2.14"
+  #    #red.vm.gui = true
+  # end 
 end
