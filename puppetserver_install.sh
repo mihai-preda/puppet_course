@@ -11,4 +11,4 @@ sudo dnf install puppet8-release-el-9.noarch.rpm && sudo dnf install puppet-tool
 sudo dnf update
 
 # Install Puppetserver and other puppet tools
-sudo dnf install -y puppet-bolt pdk
+sudo dnf install -y pdk
