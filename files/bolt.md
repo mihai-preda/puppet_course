@@ -3,7 +3,7 @@
 # make sure puppet_agent version is 8.x
 Run the following commands to get bolt going:
 cat bolt-ssh-key.pub >> ~/.ssh/authorized_keys
-echo "export BOLT_PROJECT='/puppet_course'" >> /root/.bashrc
+# (only needed when running bult from puppetserver) echo "export BOLT_PROJECT='/puppet_course'" >> /root/.bashrc 
 exec bash
 # **Important Note: when starting from scratch with new .modules directory, use bolt to add a basic module like vcsrepo or stlib**
 # set puppet server on nodes
