@@ -4,5 +4,4 @@ class role::zabbixserver {
   include profile::puppet_agent
   include profile::certificates
   include profile::monitor
-  include profile::swap_file
 }
