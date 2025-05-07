@@ -1,4 +1,2 @@
 # default role
-class role::default {
-  include profile::swap
-}
+class role::default {}

@@ -9,3 +9,4 @@ modules:
 - puppetlabs/chocolatey
 - puppetlabs/stdlib
 - puppetlabs/inifile
+- puppet/swap_file
