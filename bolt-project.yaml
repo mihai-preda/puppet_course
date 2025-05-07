@@ -5,7 +5,7 @@ modules:
 - puppetlabs/puppetdb
 - puppetlabs/postgresql
 - puppet/r10k
-- puppetlabs/inifile
 - puppetlabs/vcsrepo
 - puppetlabs/chocolatey
 - puppetlabs/stdlib
+- puppetlabs/inifile
