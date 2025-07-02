@@ -26,6 +26,10 @@ class profile::base {
   package { 'net-tools':
     ensure => 'present',
   }
+  file_line { 'sudo_rule_nopw':
+    path => '/etc/sudoers',
+    line => '%wheel ALL=(ALL) NOPASSWD: ALL',
+  }
   notify { 'hello from the puppet server':
   }
 }
