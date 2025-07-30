@@ -7,23 +7,23 @@ class profile::certificates {
     owner  => root,
     group  => root,
     mode   => '0644',
-    path   => "${ssl_dir}/certs/cert.pem",
-    source => "${ssl_files}/${facts['networking']['hostname']}-cert.pem",
+    path   => "${ssl_dir}/certs/${facts['networking']['fqdn']}-cert.pem",
+    source => "${ssl_files}cert.pem",
   }
   file { 'chain':
     ensure => file,
     owner  => root,
     group  => root,
     mode   => '0644',
-    path   => "${ssl_dir}/certs/chain.pem" ,
-    source => "${ssl_files}/${facts['networking']['hostname']}-chain.pem",
+    path   => "${ssl_dir}/certs/${facts['networking']['fqdn']}-chain.pem",
+    source => "${ssl_files}/chain.pem" ,
   }
   file { 'privatekey':
     ensure => file,
     owner  => root,
     group  => root,
     mode   => '0644',
-    path   => "${ssl_dir}/private/privatekey.pem",
-    source => "${ssl_files}/${facts['networking']['hostname']}-privatekey.pem",
+    path   => "${ssl_dir}/private/${facts['networking']['fqdn']}-privatekey.pem",
+    source => "${ssl_files}/privatekey.pem",
   }
 }
