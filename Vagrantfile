@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define :zbs do |zbs|
-    zbs.vm.hostname = "monitor.preda.ca" 
+    zbs.vm.hostname = "monit.preda.ca" 
     zbs.vm.network :public_network, ip: "10.21.2.13"
     zbs.vm.provision "shell", run: "always", inline: $rhel
     zbs.vm.synced_folder ".", "/puppet_course"
