@@ -5,7 +5,7 @@ groups:
   - name: linux
     targets:
       - db.preda.ca
-      - monitor.preda.ca
+      - monit.preda.ca
       - puppet.preda.ca
       - web.preda.ca
       - mini.preda.ca  
