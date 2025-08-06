@@ -10,3 +10,4 @@ modules:
 - puppetlabs/stdlib
 - puppet/swap_file
 - puppetlabs/inifile
+- puppetlabs/puppet_conf
