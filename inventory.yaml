@@ -20,9 +20,10 @@ groups:
         private-key: bolt-ssh-key
   - name: Windows
     targets:
-    - red.preda.ca
+    - win-38njq8tg.preda.ca
     config:
       transport: winrm
       winrm:
-        user: vagrant
-        password: vagrant
+        user: Administrator
+        password: $weetDreamz
+        ssl: false
