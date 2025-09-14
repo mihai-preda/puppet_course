@@ -4,12 +4,12 @@
 groups:
   - name: linux
     targets:
+      - app-srv1.preda.ca
       - db.preda.ca
+      - mini.preda.ca  
       - monit.preda.ca
       - puppet.preda.ca
       - web.preda.ca
-      - mini.preda.ca  
-      - app-srv1.preda.ca
     config:
       transport: ssh
       ssh:
