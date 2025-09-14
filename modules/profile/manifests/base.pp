@@ -6,6 +6,11 @@ class profile::base {
   exec { 'timedatectl':
     command => '/bin/timedatectl set-timezone America/Vancouver',
   }
+  file { 'dns-none':
+    ensure => 'file',
+    source => '/puppet_course/files/90-dns-none',
+    path => '/etc/NetworkManager/conf.d/90-dns-none.conf',
+  }
   file { 'resolve dot conf':
     ensure => 'file',
     source => '/puppet_course/files/resolv.conf',
