@@ -1,2 +1,4 @@
 # default role
-class role::default {}
+class role::default {
+  include profile::resolver
+}
