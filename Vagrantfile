@@ -46,10 +46,10 @@ Vagrant.configure("2") do |config|
     zbs.vm.synced_folder ".", "/puppet_course"
   end
 
-  # config.vm.define :red do |red|
-  #   red.vm.box = "winserver22"
-  #   red.vm.hostname = "red" #windows cannot handle FQDN. keep host name only
-  #   red.vm.network :public_network, ip: "10.21.2.14"
-  #    #red.vm.gui = true
-  # end 
+  # config.vm.define :test do |test| 
+  #   test.vm.hostname = "test.preda.ca"
+  #   test.vm.network :public_network, ip: "10.21.2.15"
+  #   test.vm.provision "shell", run: "always", inline: $rhel
+  #   test.vm.synced_folder ".", "/puppet_course"
+  # end
 end
