@@ -1,6 +1,6 @@
 # Hiera data
 
-To use Hiera with Puppet, you'll need to set up your Hiera configuration and integrate it into your Puppet control repository. 
+To use Hiera with Puppet, you'll need to set up your Hiera configuration and integrate it into your Puppet control repository.
 Hiera allows you to separate data from your Puppet manifests, making your configurations more modular and manageable.
 
 Here's a high-level outline:
