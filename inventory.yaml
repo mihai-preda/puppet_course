@@ -10,6 +10,7 @@ groups:
       - monit.preda.ca
       - puppet.preda.ca
       - web.preda.ca
+      - mj08fld2.preda.ca
     config:
       transport: ssh
       ssh:
