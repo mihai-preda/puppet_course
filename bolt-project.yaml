@@ -8,6 +8,6 @@ modules:
 - puppetlabs/vcsrepo
 - puppetlabs/chocolatey
 - puppetlabs/stdlib
-- puppet/swap_file
 - puppetlabs/inifile
 - puppetlabs/puppet_conf
+- puppet/firewalld

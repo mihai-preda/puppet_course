@@ -19,18 +19,23 @@ class profile::puppetserver {
     provider => 'dnf',
   }
   class { 'firewalld': }
-  firewalld_service { 'Allow SSH from the public zone':
-    services => [
-      {
-        'service'  => 'ssh',
-        'protocol' => 'tcp',
-        'action'   => 'accept',
-      },
-      {
-        'service'  => 'puppetserver',
-        'protocol' => 'tcp',
-        'action'   => 'accept',
-      },
-    ],
+  # firewalld_service { '':
+  #   services => [
+  #     {
+  #       'service'  => 'ssh',
+  #       'protocol' => 'tcp',
+  #       'action'   => 'accept',
+  #     },
+  #     {
+  #       'service'  => 'puppetserver',
+  #       'protocol' => 'tcp',
+  #       'action'   => 'accept',
+  #     },
+  #   ],
+  # }
+  firewalld_service { 'Allow SSH from the external zone':
+    ensure  => 'present',
+    service => 'ssh',
+    zone    => 'external',
   }
 }
