@@ -7,7 +7,7 @@
 Run the following commands to get bolt going:
 cat bolt-ssh-key.pub >> ~/.ssh/authorized_keys
 
-## (only needed when running bult from puppetserver) echo "export BOLT_PROJECT='/puppet_course'" >> /root/.bashrc
+## (only needed when running bolt from puppetserver) echo "export BOLT_PROJECT='/puppet_course'" >> /root/.bashrc
 
 exec bash
 

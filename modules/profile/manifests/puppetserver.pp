@@ -18,21 +18,19 @@ class profile::puppetserver {
     ensure   => 'installed',
     provider => 'dnf',
   }
-  firewalld_custom_service { 'puppet':
-    short                => 'puppet',
-    description          => 'Puppet Client access Puppet Server',
-    ports                => [
+  class { 'firewalld': }
+  firewalld_service { 'Allow SSH from the public zone':
+    services => [
       {
-        'port'     => '8140',
+        'service'  => 'ssh',
         'protocol' => 'tcp',
+        'action'   => 'accept',
       },
       {
-        'port'     => '8140',
-        'protocol' => 'udp',
+        'service'  => 'puppetserver',
+        'protocol' => 'tcp',
+        'action'   => 'accept',
       },
     ],
-    module               => ['nf_conntrack_netbios_ns',
-      'ipv4_destination' => '127.0.0.1',
-    'ipv6_destination'   => '::1'],
   }
 }
