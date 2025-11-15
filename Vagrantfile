@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BOX = "bento/oraclelinux-9.4"
+BOX = "bento/oraclelinux-9"
 WIN22 = "winserver22"
 $rhel = <<EOF
 route add default gw 10.21.2.254

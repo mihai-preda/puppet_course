@@ -17,4 +17,4 @@ bolt-debug.log
 /modules/puppetdb
 /modules/stdlib
 /modules/systemd
-
+debug_log.txt

@@ -18,4 +18,21 @@ class profile::puppetserver {
     ensure   => 'installed',
     provider => 'dnf',
   }
+  firewalld_custom_service { 'puppet':
+    short                => 'puppet',
+    description          => 'Puppet Client access Puppet Server',
+    ports                => [
+      {
+        'port'     => '8140',
+        'protocol' => 'tcp',
+      },
+      {
+        'port'     => '8140',
+        'protocol' => 'udp',
+      },
+    ],
+    module               => ['nf_conntrack_netbios_ns',
+      'ipv4_destination' => '127.0.0.1',
+    'ipv6_destination'   => '::1'],
+  }
 }
