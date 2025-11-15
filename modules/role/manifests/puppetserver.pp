@@ -4,5 +4,4 @@ class role::puppetserver {
   include profile::puppet_agent
   include profile::puppetserver
   include profile::r10k
-  include profile::swap_file
 }
