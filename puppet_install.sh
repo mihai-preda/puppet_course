@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 # Download the puppet yum repositories config packages
 curl -O https://yum.puppet.com/puppet8-release-el-9.noarch.rpm
