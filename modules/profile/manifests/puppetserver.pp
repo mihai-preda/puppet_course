@@ -18,24 +18,9 @@ class profile::puppetserver {
     ensure   => 'installed',
     provider => 'dnf',
   }
-  class { 'firewalld': }
-  # firewalld_service { '':
-  #   services => [
-  #     {
-  #       'service'  => 'ssh',
-  #       'protocol' => 'tcp',
-  #       'action'   => 'accept',
-  #     },
-  #     {
-  #       'service'  => 'puppetserver',
-  #       'protocol' => 'tcp',
-  #       'action'   => 'accept',
-  #     },
-  #   ],
-  # }
-  firewalld_service { 'Allow SSH from the external zone':
+  firewalld_service { 'Allow multiple services from the public zone':
     ensure  => 'present',
-    service => 'ssh',
-    zone    => 'external',
+    service => ['ssh', 'puppet', 'puppetserver'],
+    zone    => 'public',
   }
 }
