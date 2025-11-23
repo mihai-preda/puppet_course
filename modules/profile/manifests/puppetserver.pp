@@ -23,4 +23,20 @@ class profile::puppetserver {
     service => ['ssh', 'puppet', 'puppetserver'],
     zone    => 'public',
   }
+  package { 'hiera-eyaml':
+    ensure   => 'installed',
+    provider => 'puppetserver_gem',
+  }
+  file { 'eyaml-dir':
+    ensure   => 'directory',
+    path     => '/etc/puppetlabs/puppet/eyaml/keys',
+    owner    => puppet,
+    provider => posix,
+  }
+  exec { 'pkcs':
+    command => '/opt/puppetlabs/bin/hiera createkeys',
+    cwd     => '/etc/puppetlabs/puppet/eyaml/keys',
+    path    => '/opt/puppetlabs/bin/hiera',
+    creates => ['/etc/puppetlabs/puppet/eyaml/keys/private_key.pkcs7.pem', '/etc/puppetlabs/puppet/eyaml/keys/public_key.pkcs7.pem'],
+  }
 }
