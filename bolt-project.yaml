@@ -11,3 +11,4 @@ modules:
 - puppetlabs/inifile
 - puppetlabs/puppet_conf
 - puppet/firewalld
+- puppet/yum

@@ -18,3 +18,4 @@ bolt-debug.log
 /modules/stdlib
 /modules/systemd
 debug_log.txt
+$null

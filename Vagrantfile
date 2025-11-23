@@ -1,8 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BOX = "bento/oraclelinux-9.4"
-WIN22 = "winserver22"
+BOX = "bento/oraclelinux-9"
 $rhel = <<EOF
 route add default gw 10.21.2.254
 nmcli conn modify "System eth1" ipv4.dns  "10.21.2.254"
