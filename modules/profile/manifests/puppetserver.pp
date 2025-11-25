@@ -6,7 +6,7 @@ class profile::puppetserver {
   file { 'sysconfig-puppetserver':
     ensure  => 'file',
     path    => '/etc/sysconfig/puppetserver',
-    source  => '/puppet_course/files/sysconfig-puppetserver',
+    source  => '/puppet_course/files/sysconfig-puppetserver.txt',
     require => Package['puppetserver'],
   }
   service { 'puppetserver':
