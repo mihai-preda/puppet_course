@@ -4,8 +4,9 @@
 
 ## make sure puppet_agent version is 8.x
 
-Run the following commands to get bolt going:
-cat bolt-ssh-key.pub >> ~/.ssh/authorized_keys
+Copy your ssh key to the .ssh/authorized_keys of each server's vagrant user.
+Do not use ruby-ssh, which is bolt's built-in ssh library.
+Use native-ssh from Windows or other OS, and OP will prompt you for the private key to connect when Bolt runs.
 
 ## (only needed when running bolt from puppetserver) echo "export BOLT_PROJECT='/puppet_course'" >> /root/.bashrc
 

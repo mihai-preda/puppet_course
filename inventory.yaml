@@ -18,7 +18,6 @@ groups:
         native-ssh: true
         user: vagrant
         run-as: root
-        private-key: bolt-ssh-key
   - name: Windows
     targets:
     - win-38njq8tg.preda.ca
