@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     puppet.vm.hostname = "puppet.preda.ca"
     puppet.vm.network :public_network, ip: "10.21.2.10"
     puppet.vm.provision "shell", run: "always", inline: $rhel
-    #puppet.vm.synced_folder ".", "/puppet_course"
+    puppet.vm.synced_folder ".", "/puppet_course"
     puppet.vm.provider :vmware_desktop do |vb|
       vb.memory = "3072"
     end
@@ -28,20 +28,20 @@ Vagrant.configure("2") do |config|
     web.vm.hostname = "web.preda.ca"
     web.vm.network :public_network, ip: "10.21.2.11"
     web.vm.provision "shell", run: "always", inline: $rhel
-    #web.vm.synced_folder ".", "/puppet_course"
+    web.vm.synced_folder ".", "/puppet_course"
   end
 
   config.vm.define :db do |db|
     db.vm.hostname = "db.preda.ca"
     db.vm.network :public_network, ip: "10.21.2.12"
     db.vm.provision "shell", run: "always", inline: $rhel
-    #db.vm.synced_folder ".", "/puppet_course"
+    db.vm.synced_folder ".", "/puppet_course"
   end
 
   config.vm.define :zbs do |zbs|
     zbs.vm.hostname = "monit.preda.ca" 
     zbs.vm.network :public_network, ip: "10.21.2.13"
     zbs.vm.provision "shell", run: "always", inline: $rhel
-    #zbs.vm.synced_folder ".", "/puppet_course"
+    zbs.vm.synced_folder ".", "/puppet_course"
   end
 end

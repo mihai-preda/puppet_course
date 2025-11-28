@@ -4,6 +4,7 @@
 # The following directive installs modules to the managed moduledir.
 moduledir '.modules'
 
+mod 'puppetlabs-accounts', '8.3.1'
 mod 'puppet/yum', '7.3.0'
 mod 'puppetlabs/augeas_core', '1.5.0'
 mod 'puppetlabs/puppet_conf', '2.1.0'
