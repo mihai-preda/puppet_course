@@ -12,3 +12,4 @@ modules:
 - puppetlabs/puppet_conf
 - puppet/firewalld
 - puppet/yum
+- puppetlabs/accounts
