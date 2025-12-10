@@ -22,6 +22,7 @@ class profile::puppetserver {
     ensure  => 'present',
     service => 'puppetmaster',
     zone    => 'public',
+    require => Service['puppetserver'],
   }
   package { 'hiera-eyaml':
     ensure   => 'installed',

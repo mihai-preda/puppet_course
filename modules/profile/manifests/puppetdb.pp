@@ -1,6 +1,5 @@
 # profile puppetdb
 class profile::puppetdb {
-  # Configure puppetdb and its underlying database
   class { 'puppetdb':
     postgresql_ssl_on       => true,
     database_host           => 'db.preda.ca',
@@ -9,10 +8,26 @@ class profile::puppetdb {
     node_ttl                => '0s',
     node_purge_ttl          => '0s',
   }
-  exec { '/opt/puppetlabs/bin/puppetdb ssl-setup -f': }
-  firewall { '100 allow http and https access':
-    dport => [8081, 8080],
-    proto => 'tcp',
-    jump  => 'accept',
+  firewalld_custom_service { 'puppetdb':
+    require     => Class['puppetdb'],
+    short       => 'puppetdb',
+    description => 'Puppetdb http and https ports',
+    ports       => [
+      {
+        'port'     => '8080',
+        'protocol' => 'tcp',
+      },
+      {
+        'port'     => '8081',
+        'protocol' => 'tcp',
+      },
+    ],
+  }
+  exec { 'puppetdb-ssl-setup':
+    command     => '/opt/puppetlabs/bin/puppetdb ssl-setup -f',
+    path        => ['/bin','/usr/bin','/opt/puppetlabs/bin'],
+    unless      => '/opt/puppetlabs/bin/puppetdb ssl-setup --check || test -f /etc/puppetlabs/puppetdb/ssl/ca.pem',
+    require     => Class['puppetdb'],
+    refreshonly => true,
   }
 }
