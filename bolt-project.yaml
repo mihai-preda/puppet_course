@@ -6,10 +6,9 @@ modules:
 - puppetlabs/postgresql
 - puppet/r10k
 - puppetlabs/vcsrepo
-- puppetlabs/chocolatey
-- puppetlabs/stdlib
 - puppetlabs/inifile
 - puppetlabs/puppet_conf
 - puppet/firewalld
 - puppet/yum
 - puppetlabs/accounts
+- puppetlabs/stdlib
