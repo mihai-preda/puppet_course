@@ -3,7 +3,7 @@
 
 BOX = "almalinux/9"
 $rhel = <<EOF
-route add default gw 10.21.2.254
+ip route add default via 10.21.2.254
 nmcli conn modify "System eth1" ipv4.dns  "10.21.2.254"
 eval "$(route -n | awk '{ if ($8 == "eth0" && $2 != "0.0.0.0") print "route del default gw " $2; }')"
 EOF
