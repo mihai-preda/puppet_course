@@ -6,11 +6,11 @@ Create a local dev env by installing VMware Workstation Pro (free for personal u
 
  <https://developer.hashicorp.com/vagrant/docs/providers/vmware/vagrant-vmware-utility>
 
-2) Install vagrant manually.
-3) Install vagrant plugins:
+1) Install vagrant manually.
+2) Install vagrant plugins:
 
-  vagrant plugin install vagrant-hostmanager
-  vagrant plugin install vagrant-vmware-desktop
+- vagrant plugin install vagrant-hostmanager
+- vagrant plugin install vagrant-vmware-desktop
 
 ## If Vagrant is installed before VMware or any provider, it will not recognize the VMware provider [^1]
 
