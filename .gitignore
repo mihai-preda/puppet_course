@@ -19,3 +19,4 @@ bolt-debug.log
 /modules/systemd
 debug_log.txt
 $null
+.claude/
