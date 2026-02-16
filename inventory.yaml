@@ -24,5 +24,7 @@ groups:
       transport: winrm
       winrm:
         user: Administrator
-        password: $weetDreamz
+        password:
+          _plugin: env_var
+          var: WINRM_PASSWORD
         ssl: false

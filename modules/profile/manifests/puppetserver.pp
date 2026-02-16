@@ -32,7 +32,6 @@ class profile::puppetserver {
     ensure   => 'directory',
     path     => '/etc/puppetlabs/puppet/eyaml', # The keys dir will be created upon running the command eyaml createkeys
     owner    => puppet,
-    provider => posix,
   }
   exec { 'eyaml create keys':
     command => '/opt/puppetlabs/puppet/lib/ruby/vendor_gems/bin/eyaml createkeys',

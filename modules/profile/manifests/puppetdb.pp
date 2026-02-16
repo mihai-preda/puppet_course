@@ -4,7 +4,7 @@ class profile::puppetdb {
     postgresql_ssl_on       => true,
     database_host           => 'db.preda.ca',
     database_listen_address => '0.0.0.0',
-    database_password       => 'ctm3muf7tze!PYN@pvj',
+    database_password       => lookup('profile::puppetdb::database_password'),
     node_ttl                => '0s',
     node_purge_ttl          => '0s',
   }
@@ -24,10 +24,9 @@ class profile::puppetdb {
     ],
   }
   exec { 'puppetdb-ssl-setup':
-    command     => '/opt/puppetlabs/bin/puppetdb ssl-setup -f',
-    path        => ['/bin','/usr/bin','/opt/puppetlabs/bin'],
-    unless      => '/opt/puppetlabs/bin/puppetdb ssl-setup --check || test -f /etc/puppetlabs/puppetdb/ssl/ca.pem',
-    require     => Class['puppetdb'],
-    refreshonly => true,
+    command => '/opt/puppetlabs/bin/puppetdb ssl-setup -f',
+    path    => ['/bin','/usr/bin','/opt/puppetlabs/bin'],
+    unless  => 'test -f /etc/puppetlabs/puppetdb/ssl/ca.pem',
+    require => Class['puppetdb'],
   }
 }

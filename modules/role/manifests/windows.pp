@@ -1,4 +1,4 @@
 # Windows role
 class role::windows {
-  include role::puppet_agent
+  include profile::puppet_agent
 }
