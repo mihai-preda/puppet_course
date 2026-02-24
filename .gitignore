@@ -20,3 +20,4 @@ bolt-debug.log
 debug_log.txt
 $null
 .claude/
+.vscode
