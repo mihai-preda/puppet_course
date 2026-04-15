@@ -5,3 +5,4 @@ modules:
 - puppetlabs/stdlib
 - puppet/firewalld
 - puppet/r10k
+- puppetlabs/inifile
