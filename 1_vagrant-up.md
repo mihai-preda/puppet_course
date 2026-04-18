@@ -10,4 +10,4 @@
 6) Build the DB vm third.
 
 - make sure the PostgreSQL repo is created in /etc/yum.repos.d.
-- run bolt twice on Puppet DB
+- run bolt twice on every node
