@@ -36,10 +36,10 @@ Vagrant.configure("2") do |config|
     db.vm.network :public_network, ip: "10.21.2.12", dev: 'eth0'
     db.vm.provision "shell", run: "always", inline: $rhel
     db.vm.synced_folder ".", "/puppet_course" # Linux this is an NFS mount and fails
-    puppet.vm.provider :vmware_desktop do |vb|
+    db.vm.provider :vmware_desktop do |vb|
       vb.memory = "3072"
-    end
   end
+end
 
   config.vm.define :zbs do |zbs|
     zbs.vm.hostname = "monit.preda.ca"
