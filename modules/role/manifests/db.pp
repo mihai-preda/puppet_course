@@ -4,4 +4,5 @@ class role::db {
   include profile::puppet_agent
   require profile::monitor
   include profile::swap_file
+  include profile::puppetdb
 }

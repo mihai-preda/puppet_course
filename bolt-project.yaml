@@ -7,3 +7,4 @@ modules:
 - puppet/r10k
 - puppetlabs/inifile
 - puppet/swap_file
+- puppetlabs/puppetdb
