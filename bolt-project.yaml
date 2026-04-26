@@ -8,3 +8,4 @@ modules:
 - puppetlabs/inifile
 - puppet/swap_file
 - puppetlabs/puppetdb
+- puppetlabs/accounts

@@ -17,21 +17,6 @@ class profile::puppetdb {
     manage_dbserver         => true,
     postgres_version        => '16',
   }
-  firewalld_custom_service { 'puppetdb':
-    require     => Class['puppetdb'],
-    short       => 'puppetdb',
-    description => 'Puppetdb http and https ports',
-    ports       => [
-      {
-        'port'     => '8080',
-        'protocol' => 'tcp',
-      },
-      {
-        'port'     => '8081',
-        'protocol' => 'tcp',
-      },
-    ],
-  }
   # exec { 'puppetdb-ssl-setup':
   #   command => '/opt/puppetlabs/bin/puppetdb ssl-setup -f',
   #   path    => ['/bin','/usr/bin','/opt/puppetlabs/bin'],
