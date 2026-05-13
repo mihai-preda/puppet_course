@@ -23,6 +23,9 @@ class profile::base {
   package { 'net-tools':
     ensure => 'present',
   }
+  package { 'glibc-langpack-en':
+    ensure => 'present',
+  }
   notify { 'hello from the puppet server':
   }
 }
