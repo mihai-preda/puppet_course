@@ -18,16 +18,16 @@ class profile::puppetserver {
     ensure   => 'installed',
     provider => 'dnf',
   }
-  firewalld_service { 'Allow puppetmaster from the public zone':
-    ensure  => 'present',
-    service => 'puppetmaster',
-    zone    => 'public',
-    require => Service['puppetserver'],
-  }
+  # firewalld_service { 'Allow puppetmaster from the public zone':
+  #   ensure  => 'present',
+  #   service => 'puppetmaster',
+  #   zone    => 'public',
+  #   require => Service['puppetserver'],
+  # }
   package { 'hiera-eyaml':
     ensure   => 'installed',
     provider => 'puppetserver_gem',
-    require  => Package['puppetserver'],
+    require  => [Package['puppetserver'], Service['puppetserver']],
   }
   file { 'eyaml-dir':
     ensure => 'directory',
