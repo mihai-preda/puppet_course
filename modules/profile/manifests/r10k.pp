@@ -6,7 +6,7 @@ class profile::r10k {
       'control-repo' => {
         'remote'                 => 'https://github.com/mihai-preda/control-repo',
         'basedir'                => '/etc/puppetlabs/code/environments',
-        'ignore_branch_prefixes' => ['claude-'],
+        'ignore_branch_prefixes' => ['claude/'],
       },
     },
   }
