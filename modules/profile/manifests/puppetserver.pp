@@ -27,6 +27,7 @@ class profile::puppetserver {
   package { 'hiera-eyaml':
     ensure   => 'installed',
     provider => 'puppetserver_gem',
+    require  => Package['puppetserver'],
   }
   file { 'eyaml-dir':
     ensure => 'directory',
@@ -34,9 +35,9 @@ class profile::puppetserver {
     owner  => puppet,
   }
   exec { 'eyaml create keys':
-    command => '/opt/puppetlabs/puppet/lib/ruby/vendor_gems/bin/eyaml createkeys',
+    command => '/opt/puppetlabs/server/data/puppetserver/jruby-gems/bin/eyaml createkeys',
     cwd     => '/etc/puppetlabs/puppet/eyaml',
-    path    => '/opt/puppetlabs/puppet/lib/ruby/vendor_gems/bin',
+    path    => '/opt/puppetlabs/server/data/puppetserver/jruby-gems/bin',
     creates => ['/etc/puppetlabs/puppet/eyaml/keys/private_key.pkcs7.pem', '/etc/puppetlabs/puppet/eyaml/keys/public_key.pkcs7.pem'],
   }
 }
