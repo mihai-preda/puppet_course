@@ -2,6 +2,5 @@
 class role::webserver {
   include profile::base
   include profile::puppet_agent
-  include profile::certificates
   include profile::swap_file
 }
