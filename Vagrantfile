@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     puppet.vm.hostname = "puppet.preda.ca"
     puppet.vm.network :public_network, ip: "10.21.2.10", dev: 'eth0'
     puppet.vm.provision "shell", run: "always", inline: $rhel
-    puppet.vm.synced_folder ".", "/puppet_course" # Linux thinks this is an NFS mount and fails
+    #puppet.vm.synced_folder ".", "/puppet_course" # Linux thinks this is an NFS mount and fails
     puppet.vm.provider :vmware_desktop do |vb|
       vb.memory = "3072"
     end
@@ -28,14 +28,14 @@ Vagrant.configure("2") do |config|
     web.vm.hostname = "web.preda.ca"
     web.vm.network :public_network, ip: "10.21.2.11", dev: 'eth0'
     web.vm.provision "shell", run: "always", inline: $rhel
-    web.vm.synced_folder ".", "/puppet_course" # Linux thinks this is an NFS mount and fails
+    #web.vm.synced_folder ".", "/puppet_course" # Linux thinks this is an NFS mount and fails
   end
 
   config.vm.define :db do |db|
     db.vm.hostname = "db.preda.ca"
     db.vm.network :public_network, ip: "10.21.2.12", dev: 'eth0'
     db.vm.provision "shell", run: "always", inline: $rhel
-    db.vm.synced_folder ".", "/puppet_course" # Linux this is an NFS mount and fails
+    #db.vm.synced_folder ".", "/puppet_course" # Linux this is an NFS mount and fails
     db.vm.provider :vmware_desktop do |vb|
       vb.memory = "3072"
   end
@@ -45,6 +45,6 @@ end
     zbs.vm.hostname = "monit.preda.ca"
     zbs.vm.network :public_network, ip: "10.21.2.13", dev: 'eth0'
     zbs.vm.provision "shell", run: "always", inline: $rhel
-    zbs.vm.synced_folder ".", "/puppet_course" # Linux this is an NFS mount and fails
+    #zbs.vm.synced_folder ".", "/puppet_course" # Linux this is an NFS mount and fails
   end
 end
