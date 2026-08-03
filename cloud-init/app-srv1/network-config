@@ -1,0 +1,18 @@
+version: 2
+ethernets:
+  primary:
+    match:
+      name: "e*"
+    set-name: eth0
+    dhcp4: false
+    dhcp6: false
+    addresses:
+      - 10.21.2.30/24
+    routes:
+      - to: 0.0.0.0/0
+        via: 10.21.2.254
+    nameservers:
+      addresses:
+        - 10.21.2.254
+      search:
+        - preda.ca
