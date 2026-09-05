@@ -23,7 +23,7 @@ package_update: true
 # Bootstrap the OpenVox agent and submit a CSR to puppet.preda.ca.
 # Manual signing on the puppetserver, then a second agent run, applies role::app1.
 runcmd:
-  - rpm -Uvh https://yum.voxpupuli.org/openvox8-release-el-9.noarch.rpm
+  - rpm -Uvh https://yum.voxpupuli.org/openvox8-release-el-10.noarch.rpm
   - dnf -y install openvox-agent
   - /opt/puppetlabs/bin/puppet config set server puppet.preda.ca --section main
   - /opt/puppetlabs/bin/puppet config set certname app-srv1.preda.ca --section main

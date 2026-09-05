@@ -9,3 +9,4 @@ modules:
 - puppet/swap_file
 - puppetlabs/puppetdb
 - puppetlabs/accounts
+- puppet/openvox_bootstrap

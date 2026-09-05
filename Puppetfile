@@ -5,6 +5,7 @@
 moduledir '.modules'
 
 mod 'puppetlabs/accounts', '8.3.1'
+mod 'puppet/openvox_bootstrap', '1.4.0'
 mod 'puppetlabs/puppetdb', '8.1.0'
 mod 'puppet/swap_file', '5.0.0'
 mod 'puppetlabs/inifile', '6.4.0'
