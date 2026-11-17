@@ -21,3 +21,4 @@ debug_log.txt
 $null
 .claude/
 .vscode
+files/*.pub

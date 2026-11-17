@@ -5,6 +5,8 @@ class profile::puppetdb {
   }
 
   class { 'puppetdb':
+    # the OpenVox build; it replaces 'puppetdb' without Providing that name
+    puppetdb_package        => 'openvoxdb',
     postgresql_ssl_on       => false,
     # postgresql_ssl_key_path     => '/etc/puppetlabs/puppet/ssl/private_keys/db.preda.ca.pem',
     # postgresql_ssl_cert_path    => '/etc/puppetlabs/puppet/ssl/certs/db.preda.ca.pem',

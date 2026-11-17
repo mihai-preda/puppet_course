@@ -1,20 +1,22 @@
 # puppet server profile
 class profile::puppetserver {
-  package { 'puppetserver':
+  # OpenVox builds: same service name, paths and binaries as puppetserver and
+  # puppetdb-termini, but the packages do not Provide those names.
+  package { 'openvox-server':
     ensure => 'installed',
   }
   file { 'sysconfig-puppetserver':
     ensure  => 'file',
     path    => '/etc/sysconfig/puppetserver',
     source  => '/puppet_course/files/sysconfig-puppetserver.txt',
-    require => Package['puppetserver'],
+    require => Package['openvox-server'],
   }
   service { 'puppetserver':
     ensure  => true,
     enable  => true,
-    require => [Package['puppetserver'], File['sysconfig-puppetserver']],
+    require => [Package['openvox-server'], File['sysconfig-puppetserver']],
   }
-  package { 'puppetdb-termini':
+  package { 'openvoxdb-termini':
     ensure   => 'installed',
     provider => 'dnf',
   }
